@@ -1,0 +1,144 @@
+#header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding y border se incluyan en el width */
+}
+
+#header-main-left {
+    width: 50px; /* Ajusta el tamaño según tus necesidades */
+    height: 60px;
+}
+
+#header-main-right {
+    width: calc(100% - 60px); /* Ajusta el espacio restante para el contenedor derecho */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    flex-wrap: wrap;
+    box-sizing: border-box; /* Asegura que el padding y border se incluyan en el width */
+    margin-right: 10px; /* Opcional */
+}
+
+#header-left {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#header-left:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+#img-user-photo {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #000000;
+    margin-right: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#header-center {
+    width: 200px;
+    height: 50px;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    margin-right: 10px;
+    display: flex;
+}
+
+#header-center-title {
+    font-size: 16px; 
+    font-weight: bold;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+    margin-left: 10px;
+}
+
+#label-user-name {
+    font-size: 16px; 
+    font-weight: bold;     
+}
+
+#label-user-role {
+    font-size: 16px;  
+}
+
+#header-right {
+    width: 300px;
+    height: 50px;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#header-right-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    height: 50px;
+    align-items: center; 
+}
+
+#icon-language {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#icon-language:hover {
+    transform: scale(1.5);
+}
+
+#icon-theme {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s; 
+}
+
+#icon-theme:hover {
+    transform: scale(1.5);
+}
+
+#icon-logout {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s; 
+}
+
+#icon-logout:hover {
+    transform: scale(1.5);
+}
+
+#label-lenguage {
+    font-size: 16px; 
+    font-weight: bold;
+    font-family: 'Arial Rounded MT Bold', sans-serif;     
+    margin: 5px;
+}

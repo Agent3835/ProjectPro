@@ -1,0 +1,132 @@
+
+.sidemenu-option {
+    position: relative;
+    float: left;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    border-bottom: 2px solid var(--sideMenuBorder);
+    /* space between; */
+    cursor: pointer;
+}
+
+.sidemenu-op {
+    position: relative;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    /* space between; */
+    cursor: pointer;
+}
+
+.sidemenu-option:hover {
+    background-color: #000000;
+}
+
+.sidemenu-icon {
+    width: 32px;
+    height: 32px;
+    margin: 10px;
+    background: #888;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidemenu-icon i {
+    font-size: 16pt;
+    color: var(--sideMenuIcon);
+}
+
+.sidemenu-text label {
+    font-size: 15pt;
+    color: var(--sideMenuText);
+    cursor: pointer;
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+    margin: 10px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+.sidemenu-arrow {
+    font-size: 16pt;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+}
+
+.sidemenu-arrow i {
+    color: var(--sideMenuArrow);
+}
+
+.sidemenu-arrow i:hover {
+    --sideMenuArrow: rgb(0, 0, 0);
+}
+
+.submenu {
+    display: none;
+}
+
+.submenu:not(.submenu-active) {
+    display: block;
+}
+
+.submenu-arrow {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    background-color: var(--sideMenuArrowBackground);
+
+}
+
+.submenu-container {
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+    color: white;
+}
+
+.submenu-visible {
+    display: flex;
+}
+
+.rotate-arrow {
+    transform: rotate(180deg);
+}
+
+.submenu-option {
+    padding: 5px 10px;
+    font-size: 15pt; /* Adjusted font size */
+    color: var(--sideMenuTextColor);
+    cursor: pointer;
+    font-family: 'Arial Rounded MT Bold', sans-serif; /* Adjusted font family */
+    text-transform: uppercase; /* Added text transform to match the new style */
+    text-align: center; /* Centered text */
+}
+
+.sidemenu-text {
+    flex-grow: 1;
+    height: 20px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: #888; */
+}
+
+
