@@ -1,6 +1,6 @@
 
 export var settings = {
-  apiUrl: "http://localhost/app/api/",
+  apiUrl: "http://localhost/lastDance5to/ProjectPro/app/api/",
   load: {
     components: [
       {

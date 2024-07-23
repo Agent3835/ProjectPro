@@ -38,9 +38,9 @@
 
 .highcharts-data-table thead tr,
 .highcharts-data-table tr:nth-child(even) {
-    background: #f8f8f8;
+    background: none;
 }
 
 .highcharts-data-table tr:hover {
-    background: #f1f7ff;
+    background: none;
 }
