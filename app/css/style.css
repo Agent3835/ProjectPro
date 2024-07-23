@@ -45,3 +45,15 @@
     background-color: var(--home-color);
 }
 
+#content-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--icon-color);
+    font-family: var(--normal-text);
+    background-color: #b1c5cc;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 15px;
+}
+
