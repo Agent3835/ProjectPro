@@ -1,35 +1,22 @@
 <!--style sheet-->
-<link rel="stylesheet" href="components/header/header.css" />
+<link rel="stylesheet" href="components/header/header.css">
 <!--html goes here-->
-<div id="header-main-left">
-  <div id="header-left">
-    <div id="header-left-icons">
-      <div id="icon-sidemenu" onclick="toggleSideMenu()">
-        <i class="fas fa-bars"></i>
-      </div>
-    </div>
-  </div>
+<div id="header-left">
+    <div id="header-menu" class="header-menu"><i class="fas fa-bars fa-lg"></i></div>
+    <div id="header-logo" class="header-logo"><img id="logo-photo" src="../../app/api/photos/logo.png" alt=""></div>
 </div>
-<div id="header-main-right">
-  <img id="img-user-photo" alt="User Photo" />
-  <div id="header-center">
-    <div id="header-center-title">
-      <label id="label-user-name"></label>
-      <label id="label-user-role"></label>
+<div id="header-right">
+    <img id="img-user-photo"></img>
+
+    <div id="user-data">
+        <div id="label-user-name"></div>
+        <div id="label-user-role"></div>
     </div>
-  </div>
-  <div id="header-right">
-    <div id="header-right-icons">
-      <div id="icon-language">
-        <i class="fas fa-globe-americas"></i>
-        <p id="label-lenguage"></p>
-      </div>
-      <div id="icon-theme">
-        <i class="fas fa-moon"></i>
-      </div>
-      <div id="icon-logout">
-        <i class="fas fa-sign-out-alt"></i>
-      </div>
+
+    <div id="settings">
+        <div id="icon-language"><i id="icon-language-fas" class="fas fa-globe fa-lg"> </i></div>
+        <div id="label-lang"></div>
+        <div id="icon-theme"><i class="fas fa-cloud-moon fa-lg"></i></div>
+        <div id="icon-logout"><i class="fas fa-sign-out-alt fa-lg" ></i></div>
     </div>
-  </div>
 </div>

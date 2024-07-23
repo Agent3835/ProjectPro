@@ -1,61 +1,46 @@
-html, body {
-    margin: 0;
+*{
     padding: 0;
-    height: 100%;
+    margin: 0;
 }
-
 :root {
-    /* Colores */
-    --home: #FBFADA;
-    --dashboard: #FBFADA;
-    --layout: #FBFADA;
-    --settings: #FBFADA;
-    --logs:#FBFADA;
-    --sideMenuText: #f5f5dc;
-    --sideMenuBorder: #000000;
-    --sideMenuArrow: #f5f5dc;
-}
+    /* Modules */
+    --home: #F44336;
+    --dashboard: #9C27B0;
+    --layout: #2196F3;
+    --settings: #8BC34A;
+    --logs: #FFC107;
+    --header-color: #fff;
+    --side-menu: rgb(255, 255, 255);
+    --side-menu-bg: #182A33;
+    --home-color: #ECECEC;
+    --footer-color: #000;
+    --icon-color: #2D5264;
 
-#header {
-    height: 60px;
-    background-color: #12372A;
-    color: #000000;
-    display: flex;
-    padding: 5px;
-    border: 2px solid #000000;
-}
+    /* Fonts */
+    --normal-text: "Nunito Sans", sans-serif;
 
-#header-left, #header-center, #header-right {
-    background-color: #FBFADA;
+  }
+
+
+
+.dark-theme {
+    --header-color: #4A3F34;
+    --side-menu: rgb(29, 25, 25);
+    --side-menu-bg: #52483E;
+    --home-color: #645B52;
+    --footer-color: #7A695B;
+    --icon-color: #726F6C;
 }
 
 #body {
     display: flex;
-    height: calc(100% - 100px);
+    flex-direction: row;
+    height: calc(100vh - 100px);
+    width: 100%;
 }
-
-#sidemenu {
-    width: 300px;
-    background-color: #436850;
-    border-right: 2px solid #000000;
-    display: flex; /* horizontal */
-    flex-direction: column; /* Uno debajo de otro */
-    align-items: center; /* vertical */
-    justify-content: flex-start;  /* horizontal */
-    padding: 10px; /* Espacio entre el borde y el contenido */
-} 
 
 #content {
-    flex-grow: 1;
-    background-color: #ADBC9F;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#footer {
-    height: 40px;
-    background-color: #FBFADA;
-    border-top: 2px solid #000000;
+    width: calc(100% - 300px);
+    background-color: var(--home-color);
 }
 

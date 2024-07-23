@@ -1,35 +1,62 @@
+#sidemenu {
+    width: 300px;
+    background-color: var(--side-menu-bg)
+}
+
+#side-menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    background-color: var(--side-menu);
+}
+
+#icon-house {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+    cursor: pointer;
+}
+
+#side-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 60%;
+    color: #DDF2FD;
+}
+
+#icon-down-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+    cursor: pointer;
+}
+
 
 .sidemenu-option {
     position: relative;
     float: left;
-    display: flex;
     width: 100%;
-    align-items: center;
-    border-bottom: 2px solid var(--sideMenuBorder);
-    /* space between; */
-    cursor: pointer;
-}
-
-.sidemenu-op {
-    position: relative;
-    float: left;
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row;
     align-items: center;
-    /* space between; */
-    cursor: pointer;
-}
-
-.sidemenu-option:hover {
-    background-color: #000000;
+    justify-content: center;
+    border-bottom: 1px solid var(--side-menu);
+    font-family: monospace;
 }
 
 .sidemenu-icon {
     width: 32px;
     height: 32px;
     margin: 10px;
-    background: #888;
+    background: #1f212b;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -38,95 +65,62 @@
 
 .sidemenu-icon i {
     font-size: 16pt;
-    color: var(--sideMenuIcon);
-}
-
-.sidemenu-text label {
-    font-size: 15pt;
-    color: var(--sideMenuText);
-    cursor: pointer;
-    font-family: 'Arial Rounded MT Bold', sans-serif;
-    margin: 10px;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-
-.sidemenu-arrow {
-    font-size: 16pt;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    right: 0;
-}
-
-.sidemenu-arrow i {
-    color: var(--sideMenuArrow);
-}
-
-.sidemenu-arrow i:hover {
-    --sideMenuArrow: rgb(0, 0, 0);
-}
-
-.submenu {
-    display: none;
-}
-
-.submenu:not(.submenu-active) {
-    display: block;
-}
-
-.submenu-arrow {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    right: 0;
-    cursor: pointer;
-    background-color: var(--sideMenuArrowBackground);
-
-}
-
-.submenu-container {
-    display: none;
-    flex-direction: column;
-    padding: 10px;
-    color: white;
-}
-
-.submenu-visible {
-    display: flex;
-}
-
-.rotate-arrow {
-    transform: rotate(180deg);
-}
-
-.submenu-option {
-    padding: 5px 10px;
-    font-size: 15pt; /* Adjusted font size */
-    color: var(--sideMenuTextColor);
-    cursor: pointer;
-    font-family: 'Arial Rounded MT Bold', sans-serif; /* Adjusted font family */
-    text-transform: uppercase; /* Added text transform to match the new style */
-    text-align: center; /* Centered text */
+    color: var(--side-menu)
 }
 
 .sidemenu-text {
-    flex-grow: 1;
+    width: calc(100% - 100px);
     height: 20px;
     margin: 10px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    /* background-color: #888; */
+    justify-content: left;
+
+}
+
+.sidemenu-text label {
+    font-size: 15pt;
+    color: var(--side-menu);
+    cursor: pointer;
+}
+
+.sidemenu-arrow {
+    font-size: 12pt;
+    color: var(--side-menu);
+    cursor: pointer;
 }
 
 
+.subMenuIcon {
+    cursor: pointer;
+}
+
+.divSubOption {
+    position: relative;
+    float: left;
+    height: 42px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--side-menu);
+    font-family: monospace;
+}
+
+.divSubOption label {
+    font-size: 16pt;
+    font-weight: bold;
+    color: var(--side-menu);
+    cursor: pointer;
+}
+
+.subMenu-selector {
+    display: flex;
+    cursor: pointer;
+}
+
+.subMenu-text{
+    font-size: 15px;
+    padding-left: 30px;
+}

@@ -1,3 +1,2 @@
-export const init = () =>{
-    console.log('Initializing home...');
+export const init = () => {
 }

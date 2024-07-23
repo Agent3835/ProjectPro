@@ -1,3 +1,3 @@
-export const init = () =>{
-    console.log('Initializing footer...');
+export const init = () => {
+    console.log('Initializing footer');
 }

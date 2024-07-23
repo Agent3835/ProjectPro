@@ -1,91 +1,145 @@
 import { menu } from "./settings.js";
+import { loadComponent } from "../../js/providers/components.js";
 
-let language = "EN";
+var language = 1;
+
+window.addEventListener("languageToggled", (event) => {
+  language = event.detail.lang === 'ES' ? 0 : 1;
+  updateMenuLanguage();
+});
 
 export const init = () => {
   console.log("Initializing sidemenu");
-  drawMenu(language);
-
-
-  // add event listener for the side menu toggle language
-  document.getElementById("icon-language").addEventListener("click", toggleLanguage);
+  console.log("Language: " + language);
+  drawMenu();
 };
-
-function drawMenu(language) {
-  console.log(menu);
-  // Link stylesheet
-  var parent = document.getElementById("sidemenu");
-  parent.innerHTML =
-    '<link rel="stylesheet" href="components/sidemenu/sidemenu.css">';
+  
+function drawMenu() {
   menu.forEach((option) => {
-    drawMenuOption(language, option);
+    drawMenuOption(option);
   });
 }
 
-function toggleLanguage() {
-  if (language === "EN") {
-    language = "ES";
-  } else {
-    language = "EN";
-  }
-  drawMenu(language);
-}
-
-function drawMenuOption(language, option) {
+function drawMenuOption(option) {
+  console.log(option);
   const parent = document.getElementById("sidemenu");
-
-  const divOption = document.createElement("div");
-  divOption.className = "sidemenu-option";
-  parent.appendChild(divOption);
-
-  const divIcon = document.createElement("div");
+  var divOption = document.createElement("div");
+  divOption.className = "sidemenu-option"; 
+  parent.appendChild(divOption); 
+  var divIcon = document.createElement("div");  
   divIcon.className = "sidemenu-icon";
-  divIcon.style.background = "var(--" + option.module + ")";
   divOption.appendChild(divIcon);
 
-  const icon = document.createElement("i");
+  var icon = document.createElement("i");
   icon.className = "fas fa-" + option.icon;
   divIcon.appendChild(icon);
 
-  const divText = document.createElement("div");
+  var divText = document.createElement("div");
   divText.className = "sidemenu-text";
   divText.id = "sidemenu-option-" + option.module;
   divOption.appendChild(divText);
 
-  const label = document.createElement("label");
-  label.textContent = (language === "ES") ? option.title[0] : option.title[1];
+  if (option.hasOwnProperty('submenu')) {
+    var divSubMenuIcon = document.createElement("div");
+    divSubMenuIcon.className = "subMenuIcon";
+    divSubMenuIcon.addEventListener("click", toogleSubMenuVisible);
+    divOption.appendChild(divSubMenuIcon);
+
+    var subMenuIcon = document.createElement("i");
+    subMenuIcon.className = "fa fa-angle-down";
+    divSubMenuIcon.appendChild(subMenuIcon);
+
+    option.submenu.forEach((submenu) => {
+      console.log(submenu);
+      drawSubMenuOption(submenu, parent);
+    });
+  }
+
+  var label = document.createElement("label");
+  label.textContent = option.title[language];
   divText.appendChild(label);
 
-  if (option.submenu) {
-      const divArrow = document.createElement("div");
-      divArrow.className = "sidemenu-arrow";
-      divOption.appendChild(divArrow);
+  //events
+  if (typeof option.url !== "undefined") {
+    console.log("After event listener");
+    divText.addEventListener("click", () => toggleContent(option));
+  }
 
-      const arrowIcon = document.createElement("i");
-      arrowIcon.className = "fas fa-chevron-down";
-      divArrow.appendChild(arrowIcon);
-
-      const submenuContainer = document.createElement("div");
-      submenuContainer.className = "submenu-container";
-      divOption.appendChild(submenuContainer);
-
-      option.submenu.forEach(submenuOption => {
-        var submenuOptionDiv = document.createElement('div');
-        submenuOptionDiv.className = 'submenu-option';
-        submenuContainer.appendChild(submenuOptionDiv);
-
-        var submenuOptionLabel = document.createElement('label');
-        submenuOptionLabel.textContent = language === 'EN' ? submenuOption.title[1] : submenuOption.title[0];
-        submenuOptionDiv.appendChild(submenuOptionLabel);
-    });
-
-      divOption.addEventListener("click", function () {
-          submenuContainer.classList.toggle("submenu-visible");
-          arrowIcon.classList.toggle("rotate-arrow");
-      });
+  function toogleSubMenuVisible() {
+    if (subMenuIcon.className === "fa fa-angle-right") subMenuIcon.className = "fa fa-angle-down";
+    else subMenuIcon.className = "fa fa-angle-right";
+    console.log("toogleSubMenuVisible");
+    var divSubOptions = document.getElementsByClassName("divSubOption");
+    console.log(divSubOptions);
+    for (let i = 0; i < divSubOptions.length; i++) {
+      if (divSubOptions[i].style.display === "none") {
+        divSubOptions[i].style.display = "flex";
+      } else {
+        divSubOptions[i].style.display = "none";
+      }
+    }
   }
 }
-// <!--html goes here-->
-//     <div class="sidemenu-arrow">
-//         <i id="icon-down-arrow" class="fas fa-chevron-down" style="color: #ffffff;"></i>
-//     </div>
+
+function drawSubMenuOption(subOption, parentDiv) {
+  var divSubOption = document.createElement("div");
+  divSubOption.className = "divSubOption";
+  divSubOption.id = "divSub" + subOption.title[language];
+  divSubOption.addEventListener("click", () => toggleContent(subOption));
+  parentDiv.appendChild(divSubOption);
+
+  var divSubSelector = document.createElement("div");
+  divSubSelector.className = "subMenu-selector";
+  divSubOption.appendChild(divSubSelector);
+
+  var subMenuOptionIcon = document.createElement("i");
+  subMenuOptionIcon.className = "fa fa-window-minimize";
+  divSubSelector.appendChild(subMenuOptionIcon);
+
+  var divSubText = document.createElement("div");
+  divSubText.className = "subMenu-text";
+  divSubText.id = "subMenu-option" + subOption.title[language];
+  divSubSelector.appendChild(divSubText);
+
+  var label = document.createElement("label");
+  label.textContent = subOption.title[language];
+  divSubText.appendChild(label);
+}
+
+function updateMenuLanguage() {
+  menu.forEach((option) => {
+    const divText = document.getElementById("sidemenu-option-" + option.module);
+    if (divText) {
+      const label = divText.querySelector('label');
+      label.textContent = option.title[language];
+    }
+
+    if (option.hasOwnProperty('submenu')) {
+      option.submenu.forEach((submenu) => {
+        var divSubText = document.getElementById("subMenu-option" + submenu.title[1]);
+        if (divSubText) {
+          const subLabel = divSubText.querySelector('label');
+          subLabel.textContent = submenu.title[language];
+        }
+      });
+    }
+  });
+}
+
+function toggleContent(option) {
+  console.log("Loading component: " + option.title[language]);
+  console.log(option);
+  const content = document.getElementById("content");
+  content.innerHTML = "";
+
+  const label = document.createElement("label");
+  label.id = "content-title"; 
+  label.textContent = option.title[language];
+  content.appendChild(label);
+
+  var divContent = document.createElement("div");
+  divContent.id = "content-" + option.module;
+  content.appendChild(divContent);
+
+  loadComponent({ ...option, parent: divContent.id });
+}
