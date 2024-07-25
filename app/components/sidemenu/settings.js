@@ -30,6 +30,13 @@ export var menu = [
     icon: "cart-arrow-down",
   },
   {
+    module: "adminPanel",
+    title: ["Panel de Administrador", "Admin Panel"],
+    url: "components/adminPanel",
+    icon: "toolbox",
+   
+  },
+  {
     module: "settings",
     title: ["Configuracion", "Settings"],
     url: "components/settings",

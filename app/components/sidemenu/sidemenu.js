@@ -1,27 +1,43 @@
 import { menu } from "./settings.js";
 import { loadComponent } from "../../js/providers/components.js";
+import { getUser } from "../../js/providers/users.js";
 
 var language = 1;
+var user = null;
 
 window.addEventListener("languageToggled", (event) => {
   language = event.detail.lang === 'ES' ? 0 : 1;
   updateMenuLanguage();
 });
 
+
 export const init = () => {
   console.log("Initializing sidemenu");
   console.log("Language: " + language);
-  drawMenu();
+  getUser().then((response) => {
+    if (response.status === 0) {
+      user = response.user;
+      drawMenu(user);
+    }else{
+      drawMenu({role: {id: 'general'}});
+    }
+  });
 };
   
-function drawMenu() {
+function drawMenu(user) {
   menu.forEach((option) => {
-    drawMenuOption(option);
+    drawMenuOption(option,user);
   });
 }
 
-function drawMenuOption(option) {
-  console.log(option);
+function drawMenuOption(option,user) {
+  console.log("This is an option: "+option);
+
+  //Validate admin role
+  console.log("User: "+user);
+  if(option.module === 'adminPanel' && user.role.id !== 'admin') return;
+
+
   const parent = document.getElementById("sidemenu");
   var divOption = document.createElement("div");
   divOption.className = "sidemenu-option"; 

@@ -1,0 +1,16 @@
+.lab-container {
+    width: 800px;
+    height: 500px;
+    border: 2px solid black;
+    position: relative;
+}
+.desk {
+    fill: none;
+    stroke: black;
+    stroke-width: 2;
+}
+.special-desk {
+    fill: none;
+    stroke: red;
+    stroke-width: 2;
+}
