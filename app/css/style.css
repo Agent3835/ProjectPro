@@ -15,6 +15,7 @@
     --home-color: #ECECEC;
     --footer-color: #000;
     --icon-color: #2D5264;
+    --content-header: #b1c5cc;
 
     /* Fonts */
     --normal-text: "Nunito Sans", sans-serif;
@@ -51,7 +52,7 @@
     align-items: center;
     color: var(--icon-color);
     font-family: var(--normal-text);
-    background-color: #b1c5cc;
+    background-color: var(--content-header);
     font-size: 20px;
     font-weight: bolder;
     margin-bottom: 15px;

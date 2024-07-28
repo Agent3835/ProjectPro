@@ -142,7 +142,7 @@ function updateMenuLanguage() {
   });
 }
 
-function toggleContent(option) {
+export function toggleContent(option) {
   console.log("Loading component: " + option.title[language]);
   console.log(option);
   const content = document.getElementById("content");

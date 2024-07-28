@@ -1,0 +1,125 @@
+#cart-screen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: var(--home-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#cart{
+    margin: 72px;
+    max-width: 950px;
+}
+
+#check-out-div {
+    display: flex;
+    align-items: center;
+    max-height: 450px;
+  }
+
+#partition{
+    width: 2px;
+    height: 350px;
+    background-color: #c6c6c6;
+    margin-right: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#total-price {
+    font-size: 25px;
+    font-family: var(--normal-text);
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#checkout-button {
+    justify-self: center;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--side-menu-bg);
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: var(--normal-text);
+    border-radius: 5px;
+    margin-left: 25px;
+}
+
+.product-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    background-color: var(--home-color);
+}
+
+.product{
+    width: 500px;
+    display: flex;
+}
+
+.delete-button {
+    cursor: pointer;
+    margin-right: 20px;
+    width: 35px;
+    height: 35px;
+}
+
+.product-image img {
+    max-width: 80px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 300px;
+}
+
+#product-name {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: var(--normal-text);
+
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.quantity-button {
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    margin: 0 10px;
+}
+
+.product-count {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    width: 30px;
+    font-family: var(--normal-text);
+
+}
+
+.product-price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-left: 10px;
+    font-family: var(--normal-text);
+
+}

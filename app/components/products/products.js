@@ -28,12 +28,34 @@ function showProducts(data) {
         templateContent.querySelector('#product-description').textContent = d.Description;
         templateContent.querySelector('#product-price').textContent = d.Price;
         templateContent.querySelector('#product-img').src = d.Image;
+
+        let button = templateContent.querySelector('#product-button');
+        button.dataset.productId = d.ProductID;
+
+        button.addEventListener('click', (e) => {
+          let productId = e.currentTarget.dataset.productId;
+          handleProductSelection(productId);
+        });
+        
         fragment.appendChild(templateContent);
         index++;
     });
 
     document.getElementById('catalog').appendChild(fragment);
+}
 
+function handleProductSelection(productId) {
+  let counts = JSON.parse(localStorage.getItem('productCounts')) || {};
+
+  if (counts[productId]) {
+    counts[productId]++;
+  } else {
+    counts[productId] = 1;
+  }
+
+  localStorage.setItem('productCounts', JSON.stringify(counts));
+
+  console.log(`Product ${productId} selected ${counts[productId]} times.`);
 }
 
 
