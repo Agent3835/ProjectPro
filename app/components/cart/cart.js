@@ -1,4 +1,7 @@
 import { getProducts } from "../../js/providers/products.js";
+import { toggleContent } from '../../components/sidemenu/sidemenu.js';
+import { menu } from '../sidemenu/settings.js';
+
 
 var total = 0;
 
@@ -16,13 +19,27 @@ function showCart(data) {
     let storedProductCounts = JSON.parse(localStorage.getItem('productCounts')) || {};
     let selectedProductIds = Object.keys(storedProductCounts);
 
+    console.log('Selected Product Ids:', selectedProductIds);
     if (selectedProductIds.length === 0) {
-        console.log('No products in cart.');
-        return;
+       
+      document.getElementById('content-cart').style.height = '75%';
+      let button = document.createElement('button');
+      button.textContent = 'Go Shopping';
+      button.id = 'btn-go-shopping';
+      button.onclick = () => {
+        toggleContent(menu[1]);
+      };
+
+      document.getElementById('cart-screen').style.display = 'none';
+      document.getElementById('announcement').innerHTML = 'No products in cart.';
+      document.getElementById('announcement').appendChild(button);
+
+      return;
     }
 
     let cartContent = document.getElementById('cart-content');
     let template = document.getElementById('template-product');
+
     if (!template) {
         console.log('Template element template-product not found');
         return;

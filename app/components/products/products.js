@@ -1,4 +1,5 @@
 import { getProducts } from "../../js/providers/products.js";
+import Swal from 'https://cdn.skypack.dev/sweetalert2';
 
 export const init = () => {
   console.log("Initializing Products...");
@@ -45,17 +46,27 @@ function showProducts(data) {
 }
 
 function handleProductSelection(productId) {
-  let counts = JSON.parse(localStorage.getItem('productCounts')) || {};
+  Swal.fire({
+    title: "Add to your cart?",
+    showDenyButton: true,
+    confirmButtonText: "Add to cart",
+    denyButtonText: `Cancel`,
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let counts = JSON.parse(localStorage.getItem('productCounts')) || {};
 
-  if (counts[productId]) {
-    counts[productId]++;
-  } else {
-    counts[productId] = 1;
-  }
-
-  localStorage.setItem('productCounts', JSON.stringify(counts));
-
-  console.log(`Product ${productId} selected ${counts[productId]} times.`);
+      if (counts[productId]) {
+        counts[productId]++;
+      } else {
+        counts[productId] = 1;
+      }
+    
+      localStorage.setItem('productCounts', JSON.stringify(counts));
+    
+      console.log(`Product ${productId} selected ${counts[productId]} times.`);
+      Swal.fire("Product Added!", "", "success");
+    } 
+  });
 }
 
 

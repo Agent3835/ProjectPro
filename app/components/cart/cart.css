@@ -1,3 +1,7 @@
+#content{
+    font-family: var(--normal-text);
+}
+
 #cart-screen{
     display: flex;
     align-items: center;
@@ -7,6 +11,30 @@
     background-color: var(--home-color);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: var(--normal-text);
+}
+
+#announcement{
+    font-size: 45px;
+    font-weight: bold;
+    font-family: var(--normal-text);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn-go-shopping{
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: var(--side-menu-bg);
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: var(--normal-text);
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
 #cart{
