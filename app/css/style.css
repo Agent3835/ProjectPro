@@ -16,6 +16,7 @@
     --footer-color: #000;
     --icon-color: #2D5264;
     --content-header: #b1c5cc;
+    --font-color: #000;
 
     /* Fonts */
     --normal-text: "Nunito Sans", sans-serif;
@@ -25,12 +26,13 @@
 
 
 .dark-theme {
-    --header-color: #4A3F34;
-    --side-menu: rgb(29, 25, 25);
-    --side-menu-bg: #52483E;
-    --home-color: #645B52;
-    --footer-color: #7A695B;
-    --icon-color: #726F6C;
+    --header-color: #27404D;
+    --side-menu: #5d7c8e;
+    --side-menu-bg: #18262F;
+    --home-color: #1e1e1efa;
+    --footer-color: #000;
+    --icon-color: #78929d;
+    --content-header: #354A52;
 }
 
 #body {

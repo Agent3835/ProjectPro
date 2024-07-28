@@ -79,7 +79,7 @@
 }
 
 .sidemenu-text label {
-    font-size: 15pt;
+    font-size: 15pt;font-color:var(--font-color);
     color: var(--side-menu);
     cursor: pointer;
 }

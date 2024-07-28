@@ -46,7 +46,7 @@
     height: 80%;
     margin: 5px;
     color: var(--icon-color);
-    font-family: monospace;
+    font-family: var(--normal-text);
 }
 #label-user-name {
     display: flex;
