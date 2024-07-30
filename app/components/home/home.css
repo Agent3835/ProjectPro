@@ -120,6 +120,7 @@ h1, h2, h3, h4, h5, h6{
     padding:4rem;
 }
 
+
 .big{
     font-size:3.5em;
 }
@@ -602,12 +603,12 @@ header article .title{
 }
 
 header section{
-    background-color: #fff;
-    width: 100%;
+    gap: 1%;
+    width: 93%;
     position: absolute;
-    bottom: -5rem;
-    left: 50%;
+    bottom: -21rem;
     transform: translate(-50%, 2rem);
+    padding-left: 99%;
 }
 
 header section aside{
@@ -631,15 +632,15 @@ header section aside a{
 }
 
 header section aside:nth-child(1){
-    background-color:#ee4500;
+    background-color: #626e79;
 }
 
 header section aside:nth-child(2){
-    background-color:#f5ab35;
+    background-color: #79a8bd;
 }
 
 header section aside:nth-child(3){
-    background-color:var(--primary_lite);
+    background-color:#08313d;
 }
 
 @media (max-width:920px){

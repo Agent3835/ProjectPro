@@ -148,11 +148,6 @@ export function toggleContent(option) {
   const content = document.getElementById("content");
   content.innerHTML = "";
 
-  const label = document.createElement("label");
-  label.id = "content-title"; 
-  label.textContent = option.title[language];
-  content.appendChild(label);
-
   var divContent = document.createElement("div");
   divContent.id = "content-" + option.module;
   content.appendChild(divContent);
