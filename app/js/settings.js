@@ -1,6 +1,6 @@
 
 export var settings = {
-  apiUrl: "http://localhost/ProjectPro/app/api/",
+  apiUrl: "http://localhost/lastDance5to/ProjectPro/app/api/",
   load: {
     components: [
       {
@@ -10,10 +10,6 @@ export var settings = {
       {
         parent: "sidemenu",
         url: "components/sidemenu",
-      },
-      {
-        parent: "content",
-        url: "components/home",
       },
       {
         parent: "content",
@@ -30,6 +26,10 @@ export var settings = {
       {
         parent: "content",
         url: "components/adminPanel",
+      },
+      {
+        parent: "content",
+        url: "components/home",
       },
       {
         parent: "footer",

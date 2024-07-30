@@ -36,10 +36,4 @@ export var menu = [
     icon: "toolbox",
    
   },
-  {
-    module: "settings",
-    title: ["Configuracion", "Settings"],
-    url: "components/settings",
-    icon: "cog",
-  },
 ];

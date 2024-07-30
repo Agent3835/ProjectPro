@@ -14,7 +14,7 @@ function showProducts(data) {
     console.log('Showing Products...');
     let template = document.getElementById('template-product');
     if (!template) {
-        console.log('Template element template-day not found');
+        console.log('Template element not found');
         return;
     }
     let fragment = document.createDocumentFragment();
