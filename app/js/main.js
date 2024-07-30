@@ -3,7 +3,7 @@
 import { settings } from "./settings.js";
 import { loadComponent } from "./providers/components.js";
 
-var sideMenuVisible = true;
+var sideMenuVisible = false;
 
 export function getSideMenuVisible() {
   return sideMenuVisible;
@@ -28,4 +28,8 @@ function load() {
   settings.load.components.forEach((c) => {
     loadComponent(c);
   });
+
+  document.getElementById("sidemenu").style.display = sideMenuVisible ? "block" : "none";
+  document.getElementById("content").style.width = sideMenuVisible ? "calc(100% - 300px)" : "100%";
+
 }

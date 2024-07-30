@@ -313,3 +313,94 @@
   span.fa-3x.mb-auto.mt-auto {
       color: black;
   }
+
+  /* Para pantallas pequeñas (teléfonos) */
+@media (max-width: 576px) {
+  .col-md-6, .col-lg-4 {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding-right: 10px;
+      padding-left: 10px;
+  }
+
+  .wrimagecard {
+      margin: 10px 0;
+      box-shadow: none;
+  }
+
+  .cardIcon {
+      font-size: 40px;
+  }
+
+  .h-140 {
+      height: auto;
+  }
+
+  .display-4 {
+      font-size: 1.25rem;
+  }
+}
+
+/* Para pantallas medianas (tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .col-md-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding-right: 10px;
+      padding-left: 10px;
+  }
+
+  .col-lg-4 {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding-right: 10px;
+      padding-left: 10px;
+  }
+
+  .wrimagecard {
+      margin: 15px 0;
+  }
+
+  .cardIcon {
+      font-size: 45px;
+  }
+
+  .h-140 {
+      height: auto;
+      overflow: auto;
+  }
+
+  .display-4 {
+      font-size: 1.35rem;
+  }
+}
+
+/* Para pantallas grandes (escritorios) */
+@media (min-width: 769px) {
+  .col-md-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+  }
+
+  .col-lg-4 {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+  }
+
+  .wrimagecard {
+      margin: 20px 0;
+  }
+
+  .cardIcon {
+      font-size: 50px;
+  }
+
+  .h-140 {
+      height: 140px;
+      overflow: auto;
+  }
+
+  .display-4 {
+      font-size: 1.5rem;
+  }
+}
