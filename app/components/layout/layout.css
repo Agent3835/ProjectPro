@@ -3,44 +3,44 @@
     align-items: center;
     justify-content: center;
     margin-top: 90px;
-}
-
-.lab-container {
-    width: 800px;
-    height: 500px;
-    border: 2px solid black;
-    position: relative;
-}
-.desk {
-    fill: none;
-    stroke: black;
-    stroke-width: 2;
-}
-.special-desk {
-    fill: none;
-    stroke: red;
-    stroke-width: 2;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    
 }
 
 svg {
     width: 100%;
-    max-width: 600px;
+    max-width: 60%;
     height: auto;
     border: 1px solid #333;
     background-color: #f0f0f0;
 }
 text {
-    font-family: Arial, sans-serif;
+    font-family: var(--normal-text);
     font-size: 12px;
     fill: #333;
 }
-.floor {
-    fill: #e0e0e0;
+
+#sensor{
+    fill: #ff0202;
     stroke: #000;
     stroke-width: 1;
+    opacity: 0.5;
 }
-.room {
-    fill: #b0c4de;
-    stroke: #000;
-    stroke-width: 1;
+
+#sensor-text{
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+#legend-title{
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+#legend-text{
+    font-size: 14px;
+    font-weight: bolder;
+    
 }

@@ -2,44 +2,64 @@
 <link rel="stylesheet" href="components/layout/layout.css">
 <!--html goes here-->
 <div id ="layout">
-    <!-- <div class="lab-container">
-        <svg width="100%" height="100%">
-            <rect x="100" y="100" width="50" height="150" class="desk"></rect>
-            <rect x="200" y="100" width="50" height="150" class="desk"></rect>
-            <rect x="300" y="100" width="50" height="150" class="desk"></rect>
-            <rect x="400" y="100" width="50" height="150" class="desk"></rect>
-            <rect x="150" y="300" width="100" height="50" class="special-desk"></rect>
-        </svg>
-    </div> -->
-    <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
-        <!-- First Floor -->
-        <rect class="floor" x="20" y="150" width="560" height="120" />
-        <!-- Rooms on First Floor -->
-        <rect class="room" x="30" y="160" width="100" height="100" />
-        <rect class="room" x="140" y="160" width="100" height="100" />
-        <rect class="room" x="250" y="160" width="100" height="100" />
-        <rect class="room" x="360" y="160" width="100" height="100" />
-        <rect class="room" x="470" y="160" width="100" height="100" />
-        <!-- Room Labels for First Floor -->
-        <text x="50" y="210">Room 1</text>
-        <text x="160" y="210">Room 2</text>
-        <text x="270" y="210">Room 3</text>
-        <text x="380" y="210">Room 4</text>
-        <text x="490" y="210">Room 5</text>
-
-        <!-- Second Floor -->
-        <rect class="floor" x="20" y="20" width="560" height="120" />
-        <!-- Rooms on Second Floor -->
-        <rect class="room" x="30" y="30" width="100" height="100" />
-        <rect class="room" x="140" y="30" width="100" height="100" />
-        <rect class="room" x="250" y="30" width="100" height="100" />
-        <rect class="room" x="360" y="30" width="100" height="100" />
-        <rect class="room" x="470" y="30" width="100" height="100" />
-        <!-- Room Labels for Second Floor -->
-        <text x="50" y="80">Room 6</text>
-        <text x="160" y="80">Room 7</text>
-        <text x="270" y="80">Room 8</text>
-        <text x="380" y="80">Room 9</text>
-        <text x="490" y="80">Room 10</text>
+    <svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+        <!-- Plantas -->
+        <text x="20" y="180" text-anchor="middle" dominant-baseline="middle" font-size="18">F1</text>
+        <text x="20" y="60" text-anchor="middle" dominant-baseline="middle" font-size="18">F2</text>
+        
+        <!-- Direcciones -->
+        <rect x="50" y="20" width="120" height="120" stroke="black" fill="none"/>
+        <text x="110" y="80" text-anchor="middle" dominant-baseline="middle" font-size="24">D1</text>
+        
+        <rect x="50" y="160" width="120" height="120" stroke="black" fill="none"/>
+        <text x="110" y="220" text-anchor="middle" dominant-baseline="middle" font-size="24">D2</text>
+        
+        <!-- Laboratorios -->
+        <rect x="180" y="20" width="160" height="120" stroke="black" fill="none"/>
+        <text x="260" y="80" text-anchor="middle" dominant-baseline="middle" font-size="24">L1</text>
+        
+        <rect x="350" y="20" width="160" height="120" stroke="black" fill="none"/>
+        <text x="430" y="80" text-anchor="middle" dominant-baseline="middle" font-size="24">L2</text>
+        
+        <rect x="180" y="160" width="160" height="120" stroke="black" fill="none"/>
+        <text x="260" y="220" text-anchor="middle" dominant-baseline="middle" font-size="24">L3</text>
+        
+        <rect x="350" y="160" width="160" height="120" stroke="black" fill="none"/>
+        <text x="430" y="220" text-anchor="middle" dominant-baseline="middle" font-size="24">L4</text>
+        
+        <!-- Salones -->
+        <rect x="520" y="20" width="120" height="120" stroke="black" fill="none"/>
+        <text x="580" y="80" text-anchor="middle" dominant-baseline="middle" font-size="24">C1</text>
+        
+        <rect x="650" y="20" width="120" height="120" stroke="black" fill="none"/>
+        <text x="710" y="80" text-anchor="middle" dominant-baseline="middle" font-size="24">C2</text>
+        
+        <rect x="520" y="160" width="120" height="120" stroke="black" fill="none"/>
+        <text x="580" y="220" text-anchor="middle" dominant-baseline="middle" font-size="24">C3</text>
+        
+        <rect x="650" y="160" width="120" height="120" stroke="black" fill="none"/>
+        <text x="710" y="220" text-anchor="middle" dominant-baseline="middle" font-size="24">C4</text>
+        
+        <!-- Escaleras -->
+        <line x1="180" y1="140" x2="340" y2="140" stroke="black" />
+        <line x1="180" y1="145" x2="340" y2="145" stroke="black" />
+        <line x1="180" y1="150" x2="340" y2="150" stroke="black" />
+        <line x1="180" y1="155" x2="340" y2="155" stroke="black" />
+        
+        <!-- Sensor -->
+        <rect id="sensor" x="350" y="25" width="160" height="40" stroke="red" fill="none"/>
+        <text id="sensor-text" x="430" y="50" text-anchor="middle" dominant-baseline="middle" font-size="16" fill="red">SENSOR 1</text>
+        
+         <!-- Leyenda -->
+        <text id="legend-title" x="50" y="320" font-size="18">Legend:</text>
+        
+        <text id="legend-text" x="80" y="350">F1: Floor 1</text>
+        <text id="legend-text" x="80" y="380">F2: Floor 2</text>
+        <text id="legend-text" x="220" y="350">D1, D2: Direction Offices</text>
+        <text id="legend-text" x="220" y="380">L1, L2, L3, L4: Laboratories</text>
+        <text id="legend-text" x="470" y="350">C1, C2, C3, C4: Classrooms</text>
+        <text id="legend-text" x="470" y="380">Sensor 1: Monitoring Sensor</text>
     </svg>
+      
+      
 </div>
