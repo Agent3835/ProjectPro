@@ -52,6 +52,10 @@ function toggleSideMenu() {
   if (getSideMenuVisible()) {
     document.getElementById("sidemenu").style.display = "block";
     document.getElementById("content").style.width = 'calc(100% - 300px)';
+    if(document.getElementById("first-sight")){
+      document.getElementById("content").style.height = '1050px';
+      document.getElementById("flex").style.bottom = '-30rem';
+    }
   } else {
     document.getElementById("sidemenu").style.display = "none";
     document.getElementById("content").style.width = '100%';
