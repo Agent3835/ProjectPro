@@ -1,6 +1,5 @@
 import { menu } from "./settings.js";
 import { loadComponent } from "../../js/providers/components.js";
-import { getUser } from "../../js/providers/users.js";
 
 var language = 1;
 var user = null;
@@ -14,15 +13,15 @@ window.addEventListener("languageToggled", (event) => {
 export const init = () => {
   console.log("Initializing sidemenu");
   console.log("Language: " + language);
-  getUser().then((response) => {
-    if (response.status === 0) {
-      user = response.user;
-      drawMenu(user);
-    }else{
-      drawMenu({role: {id: 'general'}});
-    }
-  });
+  if(localStorage.getItem('login') === 'true'){
+    console.log("ACCESING SIDEBAR: "+localStorage.getItem('user'));
+    user = localStorage.getItem('user');
+    drawMenu(user);
+  }else{
+    drawMenu({role: {id: 'general'}});
+  }
 };
+
   
 function drawMenu(user) {
   menu.forEach((option) => {
@@ -143,7 +142,6 @@ function updateMenuLanguage() {
 }
 
 export function toggleContent(option) {
-  console.log("Loading component: " + option.title[language]);
   console.log(option);
   const content = document.getElementById("content");
   content.innerHTML = "";

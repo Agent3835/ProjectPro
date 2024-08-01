@@ -27,7 +27,7 @@ export var menu = [
     module: "cart",
     title: ["Mi Carrito", "My Cart"],
     url: "components/cart",
-    icon: "cart-arrow-down",
+    icon: "fa-solid fa-cart-shopping",
   },
   {
     module: "adminPanel",

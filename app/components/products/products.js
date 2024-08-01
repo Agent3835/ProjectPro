@@ -5,7 +5,7 @@ export const init = () => {
   console.log("Initializing Products...");
   getProducts().then((response) => {
     console.log(response);
-    if (response.status === 0) showProducts(response.products);
+    if (response) showProducts(response);
   });
 };
 
@@ -24,14 +24,16 @@ function showProducts(data) {
         console.log(d);
 
         let templateContent = template.content.cloneNode(true);
-        templateContent.querySelector('#product-name').textContent = d.ProductName;
-        templateContent.querySelector('#product-category').textContent = d.ProductType;
-        templateContent.querySelector('#product-description').textContent = d.Description;
-        templateContent.querySelector('#product-price').textContent = d.Price;
-        templateContent.querySelector('#product-img').src = d.Image;
-
-        let button = templateContent.querySelector('#product-button');
-        button.dataset.productId = d.ProductID;
+        templateContent.querySelector('#product-name').textContent = d.productName;
+        templateContent.querySelector('#product-price').textContent = "$"+d.price;
+        console.log("https://arcticbreeze.blob.core.windows.net/productocontenedor/"+d.productImage);
+        if(d.productImage == null || d.productImage == ""){
+          templateContent.querySelector('#product-img').src = "../../api/photos/products/ac_model_x.jpeg";
+        }else{
+          templateContent.querySelector('#product-img').src = "https://arcticbreeze.blob.core.windows.net/productocontenedor/"+d.productImage;
+        }
+        let button = templateContent.querySelector('#cart-button');
+        button.dataset.productId = d.productID;
 
         button.addEventListener('click', (e) => {
           let productId = e.currentTarget.dataset.productId;

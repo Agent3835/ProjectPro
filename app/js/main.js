@@ -31,5 +31,6 @@ function load() {
 
   document.getElementById("sidemenu").style.display = sideMenuVisible ? "block" : "none";
   document.getElementById("content").style.width = sideMenuVisible ? "calc(100% - 300px)" : "100%";
+  localStorage.setItem('login', 'false');
 
 }
