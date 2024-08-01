@@ -1,5 +1,6 @@
 import { toggleContent } from "../../components/sidemenu/sidemenu.js";
 import { updateHeader } from "../../components/header/header.js";
+import { updateSideMenu } from "../../components/sidemenu/sidemenu.js";
 import { menu } from '../sidemenu/settings.js';
 import { validateUser } from "../../js/providers/users.js";
 
@@ -58,7 +59,8 @@ async function handleLogin(event) {
             localStorage.setItem("login", true);
             
 			closeLogin();
-            updateHeader(user); 
+            updateHeader(user);
+            updateSideMenu(); 
         } else {
             errorMessage.innerText = "Invalid email or password.";
         }

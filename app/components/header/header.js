@@ -145,7 +145,7 @@ function toggleTheme() {
   document.body.classList.toggle('dark-theme');
 }
 
-export async function updateHeader(user) {
+export async function updateHeader() {
   let header = document.getElementById("header-right");
   header.innerHTML = ''; 
   init(); 

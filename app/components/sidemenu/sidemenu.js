@@ -2,8 +2,6 @@ import { menu } from "./settings.js";
 import { loadComponent } from "../../js/providers/components.js";
 
 var language = 1;
-var user = null;
-
 window.addEventListener("languageToggled", (event) => {
   language = event.detail.lang === 'ES' ? 0 : 1;
   updateMenuLanguage();
@@ -15,7 +13,8 @@ export const init = () => {
   console.log("Language: " + language);
   if(localStorage.getItem('login') === 'true'){
     console.log("ACCESING SIDEBAR: "+localStorage.getItem('user'));
-    user = localStorage.getItem('user');
+    let user = JSON.parse(localStorage.getItem('user'));
+    user = JSON.parse(user);
     drawMenu(user);
   }else{
     drawMenu({role: {id: 'general'}});
@@ -30,11 +29,7 @@ function drawMenu(user) {
 }
 
 function drawMenuOption(option,user) {
-  console.log("This is an option: "+option);
-
-  //Validate admin role
-  console.log("User: "+user);
-  if(option.module === 'adminPanel' && user.role.id !== 'admin') return;
+  if(option.module === 'adminPanel' && user.role != "Admin") return;
 
 
   const parent = document.getElementById("sidemenu");
@@ -151,4 +146,10 @@ export function toggleContent(option) {
   content.appendChild(divContent);
 
   loadComponent({ ...option, parent: divContent.id });
+}
+
+export function updateSideMenu() {
+  const sideMenu = document.getElementById("sidemenu");
+  sideMenu.innerHTML = "";
+  init();
 }
