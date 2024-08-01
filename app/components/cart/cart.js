@@ -111,3 +111,8 @@ function handleChangeQuantity(productId, change) {
 
   init();
 }
+
+export function clearCart() {
+  localStorage.removeItem('productCounts');
+  init();
+}

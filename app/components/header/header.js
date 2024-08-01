@@ -1,5 +1,5 @@
 import { settings } from '../../js/settings.js';
-import { toggleContent } from '../../components/sidemenu/sidemenu.js';
+import { toggleContent, updateSideMenu } from '../../components/sidemenu/sidemenu.js';
 import { handleLogout } from '../../components/login/login.js';
 import { getSideMenuVisible, toggleSideMenuVisible } from "../../js/main.js";
 
@@ -66,6 +66,7 @@ async function updateHeaderContent() {
         // Add event listener for logout
         iconLogoutDiv.addEventListener('click', () => {
             handleLogout();
+            updateSideMenu(); 
         });
       }
 

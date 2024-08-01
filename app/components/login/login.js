@@ -3,11 +3,11 @@ import { updateHeader } from "../../components/header/header.js";
 import { updateSideMenu } from "../../components/sidemenu/sidemenu.js";
 import { menu } from '../sidemenu/settings.js';
 import { validateUser } from "../../js/providers/users.js";
+import { clearCart } from "../cart/cart.js";
 
 export const init = () => {
 	console.log("Initializing Login");
 	showLogin();
-	console.log(validateUser("mendoza.c.fabian@gmail.com","1234"));
 };
 
 
@@ -28,11 +28,11 @@ function showLogin() {
         container.appendChild(closeImg);
 
         signInBtn.addEventListener("click", () => {
-            container.classList.remove("right-panel-active");
+            container.classList.add("right-panel-active");
         });
 
         signUpBtn.addEventListener("click", () => {
-            container.classList.add("right-panel-active");
+            container.classList.remove("right-panel-active");
         });
 
         loginForm.addEventListener("submit", (e) => handleLogin(e));
@@ -73,6 +73,8 @@ export function handleLogout() {
 	localStorage.setItem("login", false);
 	localStorage.removeItem("user");
 	updateHeader();
+    clearCart();
+    location.reload();
 	console.log("User logged out");
 }
 
